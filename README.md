@@ -1,15 +1,23 @@
-# terraform-aws-hatchrun
+# terraform-aws-hatchrun (retired)
 
-Terraform module that deploys [hatchrun](https://github.com/hatchrun/hatchrun)
-into your AWS account: launch template, IAM roles, security groups, an
-optional public-subnet VPC (no NAT gateway charges), the Actions cache
-bucket, a CloudWatch dashboard, and the scaler on AWS Fargate.
+This module deployed the hatchrun self-hosted scaler into an AWS account:
+launch template, IAM roles, security groups, an optional VPC, the Actions
+cache bucket, a CloudWatch dashboard and the scaler on AWS Fargate.
 
-The scaler can run on Cloudflare Containers instead, through the
-`modules/scaler-cloudflare` submodule, leaving nothing but the runners in
-your AWS account.
+The self-hosted GitHub Actions runner product ended on 2026-11-05 and this
+module is no longer maintained.
 
-Status: early development, not ready for production.
+hatchrun is now its own CI. It needs no AWS setup on your side: nothing to
+deploy, no roles to create.
+
+## Tear down
+
+If you applied this module, remove everything it created from the
+directory that holds your configuration:
+
+```sh
+terraform destroy
+```
 
 ## Licence
 
