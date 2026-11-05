@@ -12,12 +12,16 @@ deploy, no roles to create.
 
 ## Tear down
 
-If you applied this module, remove everything it created from the
-directory that holds your configuration:
+If you applied this module, delete the `module "hatchrun"` block that
+calls it from your configuration, then run:
 
 ```sh
-terraform destroy
+terraform apply
 ```
+
+Terraform plans the removal of only this module's resources. Review the
+plan before you confirm. `terraform destroy` removes everything in the
+directory, so use it only when the directory holds nothing else.
 
 ## Licence
 
