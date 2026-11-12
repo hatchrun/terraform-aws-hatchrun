@@ -7,3 +7,7 @@ updates:
     groups:
       actions:
         patterns: ["*"]
+  - package-ecosystem: terraform
+    directories: ["/", "/examples/complete"]
+    schedule:
+      interval: weekly
